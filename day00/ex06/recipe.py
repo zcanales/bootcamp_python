@@ -6,7 +6,7 @@
 #    By: acoudouy <acoudouy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/13 14:19:55 by acoudouy          #+#    #+#              #
-#    Updated: 2020/01/13 16:00:31 by acoudouy         ###   ########.fr        #
+#    Updated: 2020/01/13 16:31:07 by acoudouy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,9 @@ def PrintRecipe(recipe):
 	if recipe in cookbook:
 		print("Recipe for " + recipe + ":")
 		ing = str(cookbook[recipe]['ingredient']);
+		meal = str(cookbook[recipe]['meal'])
 		print("Ingredient list: " + ing[4:len(ing) - 1])
-		print("To be eaten for " + cookbook[recipe]['meal'] + ".")
+		print("To be eaten for " + meal + ".")
 		print("Takes " + str(cookbook[recipe]['prep_time']) + " minutes of cooking.")
 
 def DeleteRecipe(recipe):
@@ -35,11 +36,7 @@ def AddRecipe(name, ingr, meal_type, prep_time):
 		print("Entry already exists")
 	else:
 		i = len(cookbook)
-		cookbook[i] = {}
-		cookbook[i] = name
-		cookbook[i]['ingredient'] = str(ingr)
-		cookbook[i]['meal'] = meal_type
-		cookbook[i]['prep_time'] = prep_time
+		cookbook.update( {name : {'ingredient' : "XXXX" + ingr + "X", 'meal' : meal_type, 'prep_time' : prep_time}})
 
 def PrintCookbook():
 	for item in cookbook:
@@ -83,7 +80,7 @@ while i != 5:
 	elif i == 5:
 		print("")
 	else:
-		print("Wrong number")
+		print("Wrong number, please enter corresponding number")
 	print("")
 	print("What do you want to do now ?")
 	print("1: Add a recipe")
