@@ -3,8 +3,10 @@ from random import shuffle
 def generator(txt, sep, option="None"):
     if isinstance(txt, str) == 0:
         print("The text must be a string")
+        res = ""
     elif isinstance(sep, str) == 0:
         print("The sep must br a string")
+        res = ""
     else:
         res = txt.split(sep)
         if option == "ordered":
@@ -17,7 +19,10 @@ def generator(txt, sep, option="None"):
             return (a)
         elif option == "shuffle":
             shuffle(res)
-        return (res)
+        elif option != "None":
+            print("ERROR")
+            res = ""
+    return (res)
 
 
 t = "Coucou je vais bien ne 1 t'en fais pas. la vie va 4 bon train je 2 la vie coin 3 coin hallelujah va"
@@ -34,6 +39,14 @@ for word in generator(t," ", "shuffle"):
 print("")
 print("")
 for word in generator(t," ", "ordered"):
+    print(word)
+print("")
+print("")
+for word in generator(t," ", "oups"):
+    print(word)
+print("")
+print("")
+for word in generator(2," ", "oups"):
     print(word)
 print("")
 print("")
