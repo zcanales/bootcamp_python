@@ -26,11 +26,6 @@ class Vector:
         else:
             print("Parameter is not formatted or empty")
             
-    def __str__(self):
-        """Print Vector Content"""
-        string = "(Vector " + str(self.data) + ")"
-        return (string)
-
     def __add__(self, x):
         if isinstance(x, Vector) == 1:
             if len(self.data) != len(x.data):
@@ -39,7 +34,7 @@ class Vector:
                 j = 0
                 v = Vector(len(self.data))
                 for item in self.data:
-                    v.data[j] = self.data[j] + v.data[j]
+                    v.data[j] = self.data[j] + x.data[j]
                     j += 1
         elif isinstance(x, int) == 0:
             print("The second param should be an int or a vector")
@@ -59,7 +54,7 @@ class Vector:
                 j = 0
                 v = Vector(len(self.data))
                 for item in self.data:
-                    v.data[j] = self.data[j] + v.data[j]
+                    v.data[j] = self.data[j] + x.data[j]
                     j += 1
         elif isinstance(x, int) == 0:
             print("The second param should be an int")
@@ -79,7 +74,7 @@ class Vector:
                 j = 0
                 v = Vector(len(self.data))
                 for item in self.data:
-                    v.data[j] = self.data[j] - v.data[j]
+                    v.data[j] = self.data[j] - x.data[j]
                     j += 1
         elif isinstance(x, int) == 0:
             print("The second param should be an int")
@@ -99,7 +94,7 @@ class Vector:
                 j = 0
                 v = Vector(len(self.data))
                 for item in self.data:
-                    v.data[j] = v.data[j] - self.data[j]
+                    v.data[j] = x.data[j] - self.data[j]
                     j += 1
         elif isinstance(x, int) == 0:
             print("The second param should be an int")
@@ -132,3 +127,54 @@ class Vector:
                 v.data[j] = self.data[j] / x
                 j += 1
         return(v)
+
+    def __mul__(self, x):
+        if isinstance(x, Vector) == 1:
+            if len(self.data) != len(x.data):
+                print("Vectors are not the same size")
+            else:
+                j = 0
+                res = 0
+                for item in self.data:
+                    res += self.data[j] * x.data[j]
+                    j += 1
+                return(res)
+        elif isinstance(x, int) == 0:
+            print("The second param should be an int")
+        else:
+            j = 0
+            v = Vector(len(self.data))
+            for i in self.data:
+                v.data[j] = self.data[j] * x
+                j += 1
+        return(v)
+    
+    def __rmul__(self, x):
+        if isinstance(x, Vector) == 1:
+            if len(self.data) != len(x.data):
+                print("Vectors are not the same size")
+            else:
+                j = 0
+                for item in self.data:
+                    res += self.data[j] * x.data[j]
+                    j += 1
+                return(res)
+        elif isinstance(x, int) == 0:
+            print("The second param should be an int")
+        else:
+            j = 0
+            v = Vector(len(self.data))
+            for i in self.data:
+                v.data[j] = self.data[j] * x
+                j += 1
+        return(v)
+    
+    def __str__(self):
+        """Print Vector Content"""
+        string = "(Vector " + str(self.data) + ")"
+        return (string)
+    
+    def __repr__(self):
+        """Print Vector Content"""
+        string = "(Vector " + str(self.data) + ")"
+        return (string)

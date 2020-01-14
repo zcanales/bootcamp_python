@@ -66,8 +66,29 @@ print(v3)
 print(v2)
 print("")
 
-print("Truediv : v2 / 2")
-v8 = v2 / 2
+#print("Truediv : v2 / 2")
+#v8 = v2 / 2
+#print(v8)
+#print(v2)
+#print("")
+
+print("Mul : v1 * 4")
+v8 = v1 * 4
+print(v8)
+print(v1)
+print("")
+
+print("Mul : 5 * v2")
+v8 = 5 * v2
 print(v8)
 print(v2)
 print("")
+
+print("Mul : v3 * v2")
+v8 = v3 * v2
+print(v8)
+print(v2)
+print(v3)
+print("")
+
+print(repr(v1))
