@@ -1,7 +1,4 @@
-
-
 import setuptools
-from os import path
 
 setuptools.setup(
     name='ai42',
