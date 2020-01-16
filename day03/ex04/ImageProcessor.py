@@ -29,7 +29,3 @@ class ImageProcessor():
     def display(self, array):
         img = Image.fromarray(array, 'RGB')
         img.show()
-
-test = ImageProcessor()
-imp = test.load('42AI.png')
-test.display(imp)
