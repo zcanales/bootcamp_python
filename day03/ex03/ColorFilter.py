@@ -64,11 +64,11 @@ color = ColorFilter()
 #new = color.to_blue(array)
 #test.display(new)
 
-#new = color.to_green(array)
-#test.display(new)
+new = color.to_green(array)
+test.display(new)
 
 #new = color.to_red(array)
 #test.display(new)
 
-new = color.celluloid(array)
-test.display(new)
+#new = color.celluloid(array)
+#test.display(new)
