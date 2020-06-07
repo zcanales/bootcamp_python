@@ -1,5 +1,4 @@
-# bootcamp_python
-## bootcamp create by [42AI](42ai.fr)
+# bootcamp_python created by [42AI](42ai.fr) (jan 2020)
 
 ### Day00 - Basics 1 - Eleven Commandments
 **Let's get started with the Python language!** :snake:
